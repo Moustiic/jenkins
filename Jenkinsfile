@@ -6,10 +6,27 @@ pipeline {
 	} 
     }
     stages {
-        stage('build') {
+        stage('version') {
             steps {
                 sh 'python --version'
             }
         }
+	parallel {
+	   stage('date 1') {
+             steps {
+                sh 'date; sleep 10'
+             }
+           }
+	   stage('date 2') {
+             steps {
+                sh 'date; sleep 10'
+             }
+           }
+	   stage('date 3') {
+             steps {
+                sh 'date; sleep 10'
+             }
+           }
+	}
     }
 }
