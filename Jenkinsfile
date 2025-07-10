@@ -11,6 +11,7 @@ pipeline {
                 sh 'python --version'
             }
         }
+	stage('Parallel Stage') {
 	parallel {
 	   stage('date 1') {
              steps {
@@ -27,6 +28,6 @@ pipeline {
                 sh 'date; sleep 10'
              }
            }
-	}
+	}}
     }
 }
